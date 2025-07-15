@@ -2,79 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Report Format Guidelines</title>
+  <title>JD Report Format Guidelines</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
-    h1, h2 { color: #333; }
-    details { margin-bottom: 20px; background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
-    summary { font-size: 18px; font-weight: bold; cursor: pointer; }
-    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background: #eee; }
-    code { background: #eaeaea; padding: 2px 4px; border-radius: 4px; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      background: #f5f7fa;
+      color: #333;
+      padding: 0 20px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #0052cc;
+      padding-bottom: 10px;
+    }
+    header img {
+      height: 50px;
+      margin-right: 15px;
+    }
+    header h1 {
+      font-weight: 700;
+      color: #0052cc;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    .summary {
+      background: white;
+      border-radius: 8px;
+      padding: 20px 25px;
+      box-shadow: 0 4px 15px rgba(0, 82, 204, 0.15);
+      margin-bottom: 30px;
+      color: #222;
+      line-height: 1.5;
+    }
+    .summary h2 {
+      margin-top: 0;
+      color: #0052cc;
+    }
+    select {
+      padding: 10px;
+      font-size: 1rem;
+      margin-bottom: 30px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      max-width: 400px;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+    }
+    select:hover, select:focus {
+      border-color: #0052cc;
+      outline: none;
+    }
+    .guideline {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      line-height: 1.5;
+      display: none;
+    }
+    .guideline.active {
+      display: block;
+    }
+    .guideline h2 {
+      color: #0052cc;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    .guideline ul {
+      padding-left: 20px;
+    }
+    .guideline code {
+      background: #eaeaea;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
   </style>
 </head>
 <body>
-  <h1>📋 Report Format Guidelines</h1>
 
-  <!-- Paste your report details block(s) here -->
-  
-  <details open>
-    <summary>08 - Material-In-Out-Transfer Report</summary>
-    <p><strong>Description:</strong> Track materials moving in and out across JD locations.</p>
+<header>
+  <img src="https://akam.cdn.jdmagicbox.com/images/icontent/jdrwd/jdlogosvg.svg" alt="JD Logo" />
+  <h1>Report Format Guidelines</h1>
+</header>
 
-    <h3>🧾 Formatting Rules:</h3>
-    <ul>
-      <li><strong>FROM / TO Column:</strong><br>
-        Must use format: <code>JD Cityname</code> (e.g., JD Chennai, JD Bangalore LABS).<br>
-        ❌ Incorrect examples: <code>JUSTDIAL,KOLKATTA</code>, <code>Justdial LTD(Noida)</code><br>
-        ✅ Correct: <code>JD Hyderabad</code>, <code>JD Mumbai</code>
-      </li>
-      <br>
-      <li><strong>SENDER / RECEIVER Column:</strong><br>
-        Must include <em>person’s name</em> – not location.<br>
-        ❌ Don’t enter: <code>JD Pune</code><br>
-        ✅ Correct: <code>Ramesh Kumar</code>, <code>Sneha J</code>
-      </li>
-      <br>
-      <li><strong>Asset Type Column:</strong><br>
-        Use only generic names, not models or counts.<br>
-        ❌ Don’t enter: <code>Dell 390 MBD</code>, <code>5 Mouse, 3 MBD</code><br>
-        ✅ Correct entries:
-        <ul>
-          <li>Motherboard</li>
-          <li>Printer Cartridge</li>
-          <li>Complete PC</li>
-          <li>Keyboard</li>
-          <li>Network Switch</li>
-        </ul>
-        ➕ Use <strong>Remarks column</strong> to mention <em>Make, Model, Quantity</em>
-      </li>
-      <br>
-      <li><strong>Serial Number / Barcode:</strong><br>
-        Mandatory for all JD assets.<br>
-        ❌ Don’t leave it blank or NA<br>
-        ✅ For non-serial items (e.g., cables, thermal paste), use: <code>NR</code> (Not Required)
-      </li>
-      <br>
-      <li><strong>Gate Pass / Delivery Challan:</strong><br>
-        Outward materials: Must have <strong>Gate Pass</strong><br>
-        Inward materials: Must have <strong>Delivery Challan No.</strong>
-      </li>
-      <br>
-      <li><strong>Taiga / IT Request Number:</strong><br>
-        Required for all outward materials<br>
-        ❌ No blank entries allowed
-      </li>
-      <br>
-      <li><strong>IT Approval:</strong><br>
-        Mandatory for all outward materials<br>
-        ✅ Must be filled in for every record
-      </li>
-    </ul>
+<div class="summary">
+  <h2>Welcome!</h2>
+  <p>This portal provides standardized guidelines for preparing and submitting reports across all JD locations.</p>
+  <p>Please select a report from the dropdown below to view detailed formatting rules, column requirements, and examples.</p>
+  <p>Following these guidelines helps ensure consistency and accuracy during consolidation and analysis.</p>
+</div>
 
-    <p><strong>Example File Name:</strong> <code>Material_Transfer_JDChennai_JDMumbai.xlsx</code></p>
-  </details>
+<select id="reportSelect" aria-label="Select Report">
+  <option value="">-- Select a Report --</option>
+  <option value="report08">08 - Material In-Out Transfer</option>
+  <!-- Add more reports here -->
+</select>
+
+<div id="report08" class="guideline">
+  <h2>08 - Material In-Out Transfer Report</h2>
+  <p><strong>Description:</strong> Track materials moving in and out across JD locations.</p>
+
+  <h3>Formatting Rules:</h3>
+  <ul>
+    <li><strong>FROM / TO Column:</strong> Must use format: <code>JD Cityname</code> (e.g., JD Chennai, JD Bangalore LABS).<br>
+      ❌ Incorrect examples: <code>JUSTDIAL,KOLKATTA</code>, <code>Justdial LTD(Noida)</code><br>
+      ✅ Correct: <code>JD Hyderabad</code>, <code>JD Mumbai</code></li>
+    <li><strong>SENDER / RECEIVER Column:</strong> Must include person’s name – not location.<br>
+      ❌ Don’t enter: <code>JD Pune</code><br>
+      ✅ Correct: <code>Ramesh Kumar</code>, <code>Sneha J</code></li>
+    <li><strong>Asset Type Column:</strong> Use only generic names, not models or counts.<br>
+      ❌ Don’t enter: <code>Dell 390 MBD</code>, <code>5 Mouse, 3 MBD</code><br>
+      ✅ Correct entries: Motherboard, Printer Cartridge, Complete PC, Keyboard, Network Switch.<br>
+      Use <strong>Remarks</strong> column for Make, Model, Quantity.</li>
+    <li><strong>Serial Number / Barcode:</strong> Mandatory for all JD assets.<br>
+      ❌ Don’t leave blank or NA<br>
+      ✅ For non-serial items, use <code>NR</code> (Not Required).</li>
+    <li><strong>Gate Pass / Delivery Challan:</strong> Outward materials require Gate Pass; Inward materials require Delivery Challan No.</li>
+    <li><strong>Taiga / IT Request Number:</strong> Required for all outward materials; no blanks allowed.</li>
+    <li><strong>IT Approval:</strong> Mandatory for all outward materials.</li>
+  </ul>
+  <p><strong>Example File Name:</strong> <code>Material_Transfer_JDChennai_JDMumbai.xlsx</code></p>
+</div>
+
+<script>
+  const select = document.getElementById('reportSelect');
+  const guidelines = document.querySelectorAll('.guideline');
+
+  select.addEventListener('change', () => {
+    guidelines.forEach(g => g.classList.remove('active'));
+    const val = select.value;
+    if(val) {
+      const active = document.getElementById(val);
+      if(active) active.classList.add('active');
+    }
+  });
+</script>
 
 </body>
 </html>
